@@ -31,12 +31,12 @@
       <Label layoutX="247.0" layoutY="243.0" text="€" />
       <Label layoutX="417.0" layoutY="136.0" text="€" />
       <Label layoutX="417.0" layoutY="242.0" text="€" />
-      <Button layoutX="221.0" layoutY="180.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" text="▲">
+      <Button fx:id="butLiterrechner" layoutX="221.0" layoutY="180.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" text="▼">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button disable="true" layoutX="281.0" layoutY="180.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" text="▼">
+      <Button fx:id="butFlaschenrechner" disable="true" layoutX="281.0" layoutY="180.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="45.0" text="▲">
          <font>
             <Font size="16.0" />
          </font>

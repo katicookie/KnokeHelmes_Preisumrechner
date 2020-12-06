@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup; 
 import javafx.fxml.Initializable;
+import javafx.scene.control.RadioButton;
 //import javafx.beans.value.ChangeListener;
 //import javafx.beans.value.ObservableValue;
 
@@ -38,6 +39,10 @@ public class PreisumrechnerController implements Initializable {
     private TextField FlaPreisBrutto;
     @FXML
     private TextField LiterpreisBrutto;
+    @FXML
+    private RadioButton radButMwst16;
+    @FXML
+    private RadioButton radButMwst19;
     /**
      * Initializes the controller class.
      */

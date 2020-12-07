@@ -3,6 +3,9 @@ package de.whs.mcim.knokehelmes_preisumrechner;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -54,14 +57,32 @@ public class PreisumrechnerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         FlaGroesseBox.getItems().setAll("0,187 l","0,25 l", "0,375 l", "0,5 l", "0,62 l", "0,7 l", "0,75 l", "0,8 l", "1 l", "1,5 l");
+        butLiterrechner.setOnAction(new EventHandler<ActionEvent>() {
+    @Override public void handle(ActionEvent e) {
         umrechnen();
-
+    }
+});
+//        umrechnen();
+        
  
     
     }   
 
     public void umrechnen(){
-       
+        String ausgewaehlteGroesse = FlaGroesseBox
+                .getSelectionModel().getSelectedItem();
+
+        ausgewaehlteGroesse = ausgewaehlteGroesse
+                .substring(0, ausgewaehlteGroesse.length() - 2);
+        ausgewaehlteGroesse = ausgewaehlteGroesse.replace(',', '.'); 
+        double umrechner = 1 / Double.parseDouble(ausgewaehlteGroesse);
+        double nettopreis = Double.parseDouble(FlaPreisNetto.getText());
+        umrechner = (int)(umrechner * nettopreis * 100);
+        umrechner = umrechner / 100;
+//        LiterpreisNetto.setEditable(true);
+        LiterpreisNetto.setText(umrechner + "");
+        double bruttopreis = nettopreis
+        LiterpreisBrutto.setText()
     }
 }
 
